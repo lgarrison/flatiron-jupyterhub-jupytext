@@ -1,0 +1,7 @@
+from pathlib import Path
+import os
+import sys
+
+shim_env = Path(__file__).resolve().parent / 'shim_env.sh'
+
+os.execv('/bin/bash', ['bash', str(shim_env)] + sys.argv[1:])
