@@ -2,6 +2,6 @@ from pathlib import Path
 import os
 import sys
 
-shim_env = Path(__file__).resolve().parent / 'shim_env.sh'
+runner = Path(__file__).resolve().parent / 'runner.sh'
 
-os.execv('/bin/bash', ['bash', str(shim_env)] + sys.argv[1:])
+os.execv('/bin/bash', ['bash', str(runner)] + sys.argv[1:])
