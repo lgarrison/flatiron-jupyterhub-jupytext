@@ -1,4 +1,4 @@
-# JupyterHub with jupytext
+# Flatiron JupyterHub with jupytext
 
 *Instructions to get jupytext working with Flatiron JupyterHub*
 
