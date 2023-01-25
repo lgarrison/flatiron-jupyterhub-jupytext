@@ -17,6 +17,7 @@ $ git clone https://github.com/lgarrison/flatiron-jupyterhub-jupytext.git
 
 Boostrap the venv:
 ```
+$ cd flatiron-jupyterhub-jupytext
 $ . env.sh
 $ python -m venv venv --system-site-packages
 $ . env.sh  # again, to load the venv
