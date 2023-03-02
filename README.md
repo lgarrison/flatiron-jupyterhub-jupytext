@@ -1,4 +1,4 @@
-# JupyterHub with jupytext
+# Flatiron JupyterHub with jupytext
 
 *Instructions to get jupytext working with Flatiron JupyterHub*
 
@@ -17,6 +17,7 @@ $ git clone https://github.com/lgarrison/flatiron-jupyterhub-jupytext.git
 
 Boostrap the venv:
 ```
+$ cd flatiron-jupyterhub-jupytext
 $ . env.sh
 $ python -m venv venv --system-site-packages
 $ . env.sh  # again, to load the venv
@@ -36,7 +37,7 @@ $ ln -s $(realpath jupyterhub-custom) ~/.local/bin/jupyterhub-custom
 
 ## Usage
 
-On the jupyter.flatironinstitute.org page, select "custom (advanced)" from the "environment" dropdown.  Launching the server will open a Jupyter Notebook session with jupytext loaded.
+On the https://jupyter.flatironinstitute.org page, select "custom (advanced)" from the "environment" dropdown.  Launching the server will open a Jupyter Notebook session with jupytext loaded.
 
 If you want a JupyterLab session instead, uncomment the `jupyterlab` line in `runner.sh` and comment the line below it.
 
