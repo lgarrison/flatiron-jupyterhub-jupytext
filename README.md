@@ -13,6 +13,7 @@ The following instructions show you how to set up a custom Python environment th
 Clone the repo:
 ```
 $ git clone https://github.com/lgarrison/flatiron-jupyterhub-jupytext.git
+$ chmod a+x flatiron-jupyterhub-jupytext/jupyterhub-custom  # ensure executable
 ```
 
 Boostrap the venv:
