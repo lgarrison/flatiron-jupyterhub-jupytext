@@ -26,9 +26,9 @@ $ python -m venv venv --system-site-packages
 $ . env.sh  # again, to load the venv
 ```
 
-Create a `~/.jupyter/jupyter_config.py` (from https://wiki.flatironinstitute.org/SCC/JupyterHub#Customizing_jupyterlab):
+Create a `~/.jupyter/jupyter_config.py` (from https://wiki.flatironinstitute.org/SCC/JupyterHub#Customizing_jupyterlab), replacing `USER` with your username:
 ```
-c.JupyterApp.app_dir="/mnt/home/lgarrison/.local/share/jupyter/lab"
+c.JupyterApp.app_dir="/mnt/home/USER/.local/share/jupyter/lab"
 c.LabBuildApp.dev_build=False
 ```
 
