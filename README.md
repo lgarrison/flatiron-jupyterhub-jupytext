@@ -50,6 +50,6 @@ On the https://jupyter.flatironinstitute.org page, select "custom (advanced)" fr
 
 ## Details
 
-The `jupyterhub-custom` mechanism lets you launch an arbitrary Python script from JupyterHub.  But we actually want a shell script, since we want to run `module` commands and activate a venv.  So we use `execv` to run bash with the target `runner.sh` script.  From there, we just need to load the right Python environment and launch a Jupyter session with the arguments that were passed down from `jupyterhub-custom`.
+The `jupyterhub-custom` mechanism lets you launch an arbitrary Python script from JupyterHub. Internally, our JupyterHub uses a `pyexec` script that will `execvp` the args, so effectively we can run any kind of script. In this case, we run a bash script to load the right Python environment and launch a Jupyter session with the arguments that were passed down from `jupyterhub-custom` (i.e. port number).
 
 While we used `jupytext` as the motivation for this setup, it should similarly work for any application where the Jupyter session itself needs to be running in a customized Python environment.

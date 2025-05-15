@@ -1,9 +1,12 @@
-#!/bin/env python
+#!/bin/bash
 
-import os
-import sys
-from pathlib import Path
+. /etc/profile.d/modules.sh
+srcdir="$(dirname $(readlink $0))"
+. $srcdir/env.sh
+cd $HOME
 
-runner = Path(__file__).resolve().parent / 'runner.sh'
+# Select either JupyterLab or Jupyter Notebook
+python -m jupyterlab.labhubapp $@
 
-os.execv('/bin/bash', ['bash', str(runner)] + sys.argv[1:])
+# NB currently, singleuser (i.e. classic notebook) is not working
+# python -m jupyterhub.singleuser $@
