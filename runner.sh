@@ -4,5 +4,7 @@ srcdir="$(dirname $0)"
 cd $HOME
 
 # Select either JupyterLab or Jupyter Notebook
-#python -m jupyterlab.labhubapp $@
-python -m jupyterhub.singleuser $@
+python -m jupyterlab.labhubapp $@
+
+# NB currently, singleuser (i.e. classic notebook) is not working
+# python -m jupyterhub.singleuser $@

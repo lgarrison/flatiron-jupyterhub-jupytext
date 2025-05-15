@@ -6,6 +6,8 @@
 
 This is also different from running a Jupyter kernel with a specific Python environment, which can be done by registering a custom kernel: https://wiki.flatironinstitute.org/SCC/JupyterHub#Registering_Custom_Kernels
 
+Currently only JupyterLab is supported with these instructions, not classic notebooks.
+
 The following instructions show you how to set up a custom Python environment that includes jupytext which can be launched from JupyterHub.
 
 ## Setup
@@ -24,10 +26,16 @@ $ python -m venv venv --system-site-packages
 $ . env.sh  # again, to load the venv
 ```
 
+Create a `~/.jupyter/jupyter_config.py` (from https://wiki.flatironinstitute.org/SCC/JupyterHub#Customizing_jupyterlab):
+```
+c.JupyterApp.app_dir="/mnt/home/lgarrison/.local/share/jupyter/lab"
+c.LabBuildApp.dev_build=False
+```
+
 Install jupytext:
 ```
-$ jupyter lab build  # only for JupyterLab
 $ python -m pip install jupytext
+$ jupyter lab build
 ```
 
 Create a symlink to the script that JupyterHub will run when you select the "custom" environment:
@@ -38,9 +46,7 @@ $ ln -s $(realpath jupyterhub-custom) ~/.local/bin/jupyterhub-custom
 
 ## Usage
 
-On the https://jupyter.flatironinstitute.org page, select "custom (advanced)" from the "environment" dropdown.  Launching the server will open a Jupyter Notebook session with jupytext loaded.
-
-If you want a JupyterLab session instead, uncomment the `jupyterlab` line in `runner.sh` and comment the line below it.
+On the https://jupyter.flatironinstitute.org page, select "custom (advanced)" from the "environment" dropdown.  Launching the server will open a Jupyter session with jupytext loaded.
 
 ## Details
 

@@ -1,6 +1,8 @@
-from pathlib import Path
+#!/bin/env python
+
 import os
 import sys
+from pathlib import Path
 
 runner = Path(__file__).resolve().parent / 'runner.sh'
 
